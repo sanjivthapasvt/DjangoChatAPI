@@ -20,6 +20,7 @@ cryptography==44.0.2
 daphne==4.1.2
 dj-database-url==2.3.0
 Django==5.2
+django-cloudinary-storage==0.3.0
 django-cors-headers==4.7.0
 django-jsonform==2.23.2
 django-model-utils==5.0.0
