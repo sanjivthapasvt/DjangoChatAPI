@@ -29,9 +29,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'cloudinary_storage',
     'cloudinary',
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
     'corsheaders',
     'user_api',
     'rest_framework',
@@ -172,7 +172,7 @@ USE_I18N = True
 USE_TZ = True
 
 # Static files configuration
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
