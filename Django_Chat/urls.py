@@ -3,8 +3,12 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import JsonResponse
 
-
+def ping_server(request):
+    return JsonResponse({
+        "message": "Ping!"
+    })
 urlpatterns = [
     # API schema endpoints (drf-spectacular)
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
@@ -19,6 +23,9 @@ urlpatterns = [
 
     # Chat room WebSocket/API endpoints
     path('api/', include('chat_room.urls')),
+
+    # Url for automatically ping the server so it doesn't sleep
+    path('ping/', ping_server, name="ping")
 ]
 
 # Serving media files in development
