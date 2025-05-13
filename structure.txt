@@ -1,0 +1,59 @@
+.
+├── chat_room
+│   ├── admin.py
+│   ├── apps.py
+│   ├── consumers
+│   │   ├── chat_consumer.py
+│   │   ├── __init__.py
+│   │   └── notification_consumer.py
+│   ├── __init__.py
+│   ├── models.py
+│   ├── pagination.py
+│   ├── permissions.py
+│   ├── routing.py
+│   ├── serializers
+│   │   ├── chatroom_serializers.py
+│   │   ├── __init__.py
+│   │   ├── message_serializers.py
+│   │   └── notification_serializers.py
+│   ├── signals.py
+│   ├── urls.py
+│   └── views
+│       ├── chat_room_views.py
+│       ├── __init__.py
+│       ├── message_views.py
+│       └── notificatoin_views.py
+├── Django_Chat
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── middleware.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── docker-compose.yml
+├── Dockerfile
+├── entrypoint.sh
+├── manage.py
+├── requirements.txt
+├── structure.txt
+└── user_api
+    ├── admin.py
+    ├── apps.py
+    ├── backends.py
+    ├── consumers
+    │   └── friend_request_consumers.py
+    ├── __init__.py
+    ├── models.py
+    ├── serializers
+    │   ├── cutom_token_serializers.py
+    │   ├── friend_serializers.py
+    │   ├── __init__.py
+    │   └── user_serializers.py
+    ├── tests.py
+    ├── urls.py
+    └── views
+        ├── friend_views.py
+        ├── __init__.py
+        └── user_management.py
+
+10 directories, 47 files

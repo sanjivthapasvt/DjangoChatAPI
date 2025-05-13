@@ -98,8 +98,6 @@ ASGI_APPLICATION = "Django_Chat.asgi.application"
 
 # Channel layers configuration for WebSocket support using Redis
 redis_url = os.getenv("REDIS_URL")
-if not redis_url:
-    raise ValueError("REDIS_URL environment variable is not set or is empty")
 
 
 CHANNEL_LAYERS = {
