@@ -100,6 +100,7 @@ ASGI_APPLICATION = "Django_Chat.asgi.application"
 redis_url = os.getenv("REDIS_URL")
 
 
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -110,11 +111,12 @@ CHANNEL_LAYERS = {
 }
 
 CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': redis_url + "/1",
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": redis_url + "/0",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "SSL": True,
         }
     }
 }
