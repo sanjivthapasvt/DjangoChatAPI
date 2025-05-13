@@ -11,7 +11,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - REDIS_URL=redis://redis:6379
+      - REDIS_URL=redis://default:ATeRAAIjcDE4NmQxOGE2YmNiZGI0Y2EyOGQwZjkyZjQ1M2M2ZDVjOXAxMA@welcomed-boa-14225.upstash.io:6379
     depends_on:
       - redis
       - db
