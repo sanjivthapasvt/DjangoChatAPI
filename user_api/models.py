@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from cloudinary_storage.storage import MediaCloudinaryStorage
 def user_profile_pic_path(instance, filename):
     return f'media/profile_pic/user_{instance.id}/{filename}'
 
 class User(AbstractUser):
-    profile_pic = models.ImageField(upload_to=user_profile_pic_path, blank=True, null=True, default='media/profile_pic/default.png')
+    profile_pic = models.ImageField(upload_to=user_profile_pic_path, blank=True, null=True, default='media/profile_pic/default.png', storage=MediaCloudinaryStorage())
     friends = models.ManyToManyField('self', symmetrical=True, blank=True)
     bio = models.CharField(max_length=150, null=True, blank=True)
     REQUIRED_FIELDS = ["email", "first_name", "last_name"]

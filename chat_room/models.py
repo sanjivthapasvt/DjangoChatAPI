@@ -2,6 +2,8 @@ from django.db import models, transaction
 from user_api.models import User
 import uuid
 from django.core.exceptions import ValidationError
+from cloudinary_storage.storage import MediaCloudinaryStorage
+
 
 # ------------------------------
 # ChatRoom model
@@ -15,7 +17,7 @@ class ChatRoom(models.Model):
     admins = models.ManyToManyField(User, related_name='admin_rooms')
     sharable_room_id = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
     last_message = models.ForeignKey('Message', on_delete=models.SET_NULL, null=True, blank=True, related_name='last_message_room')
-    group_image = models.ImageField(upload_to="media/chat/group_images", null=True, blank=True)
+    group_image = models.ImageField(upload_to="media/chat/group_images", null=True, blank=True,  default='media/profile_pic/default.png', storage=MediaCloudinaryStorage())
 
     class Meta:
         indexes = [
